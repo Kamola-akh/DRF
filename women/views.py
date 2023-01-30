@@ -8,11 +8,29 @@ from .serializers import WomenSerializer
 # Create your views here.
 
 
-class PostList(viewsets.ViewSet):
-    def list(self, request):
-        queryset = WomenPost.objects.all()
-        serializer = WomenSerializer(queryset, many=True)
-        return Response(serializer.data)
+class PostList(viewsets.ModelViewSet):
+    queryset = WomenPost.objects.all()
+    serializer_class = WomenSerializer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# class PostList(viewsets.ViewSet):
+#     def list(self, request):
+#         queryset = WomenPost.objects.all()
+#         serializer = WomenSerializer(queryset, many=True)
+#         return Response(serializer.data)
 
 
 
